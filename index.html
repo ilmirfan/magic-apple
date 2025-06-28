@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Apple for Kids</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#2E8B57">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('service-worker.js');
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()">EN</button>
+    <h1 id="mainTitle">🍎 Magic Apple Colors! 🍎</h1>
+
+    <div class="apple-container">
+        <div class="apple" id="apple">
+            <div class="apple-dimple"></div>
+            <div class="apple-highlight"></div>
+            <div class="leaf"></div>
+        </div>
+    </div>
+
+    <div class="instructions" id="instructions">
+        Click on any color below to change the apple!&nbsp;
+    </div>
+
+    <div class="color-palette">
+        <div class="color-option" style="background-color: #FF6B6B;" onclick="changeAppleColor('#FF6B6B')"
+            title="Red Apple"></div>
+        <div class="color-option" style="background-color: #4ECDC4;" onclick="changeAppleColor('#4ECDC4')"
+            title="Turquoise Apple"></div>
+        <div class="color-option" style="background-color: #45B7D1;" onclick="changeAppleColor('#45B7D1')"
+            title="Blue Apple"></div>
+        <div class="color-option" style="background-color: #FFA07A;" onclick="changeAppleColor('#FFA07A')"
+            title="Peach Apple"></div>
+        <div class="color-option" style="background-color: #98D8C8;" onclick="changeAppleColor('#98D8C8')"
+            title="Mint Apple"></div>
+        <div class="color-option" style="background-color: #FFD93D;" onclick="changeAppleColor('#FFD93D')"
+            title="Yellow Apple"></div>
+        <div class="color-option" style="background-color: #6BCF7F;" onclick="changeAppleColor('#6BCF7F')"
+            title="Green Apple"></div>
+        <div class="color-option" style="background-color: #4834D4;" onclick="changeAppleColor('#4834D4')"
+            title="Purple Apple"></div>
+        <div class="color-option" style="background-color: #FF9FF3;" onclick="changeAppleColor('#FF9FF3')"
+            title="Pink Apple"></div>
+        <div class="color-option" style="background-color: #FF7675;" onclick="changeAppleColor('#FF7675')"
+            title="Coral Apple"></div>
+        <div class="color-option" style="background-color: #A29BFE;" onclick="changeAppleColor('#A29BFE')"
+            title="Lavender Apple"></div>
+        <div class="color-option" style="background-color: #FD79A8;" onclick="changeAppleColor('#FD79A8')"
+            title="Magenta Apple"></div>
+        <div class="color-option" style="background-color: #8B4513;" onclick="changeAppleColor('#8B4513')"
+            title="Brown Apple"></div>
+        <div class="color-option" style="background-color: #2C2C2C;" onclick="changeAppleColor('#2C2C2C')"
+            title="Black Apple"></div>
+    </div>
+
+    <div class="fun-message" id="funMessage">
+        Have fun exploring all the colorful apples!
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
