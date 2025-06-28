@@ -1,0 +1,256 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #87CEEB, #98FB98);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #2E8B57;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.apple-container {
+    margin-bottom: 20px;
+    position: relative;
+    margin-top: 40px;
+    /* Add vertical gap below the heading */
+}
+
+.apple {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(ellipse at 60% 35%, rgba(255, 255, 255, 0.5) 0%, transparent 60%),
+        radial-gradient(ellipse at 40% 60%, rgba(0, 0, 0, 0.07) 0%, transparent 70%),
+        var(--apple-color, #FF6B6B);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: inset -15px 0px 30px rgba(0, 0, 0, 0.15), inset 10px -6px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 80px 90px 100px 110px / 80px 90px 100px 110px;
+    transform: rotate(-6deg);
+}
+
+/* Apple dimple at top center */
+.apple-dimple {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 15px;
+    background: transparent;
+    border-radius: 50%;
+    z-index: 2;
+    opacity: 1;
+    box-shadow: -15px 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px 10px rgba(229, 255, 168, 0.7);
+}
+
+/* Apple highlight for 3D effect */
+.apple-highlight {
+    position: absolute;
+    top: 38px;
+    left: 38px;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    z-index: 2;
+    opacity: 0.9;
+    box-shadow: 0 0 20px 15px rgba(255, 255, 255, 0.8);
+}
+
+/* Apple stem */
+.apple::after {
+    content: '';
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-8deg);
+    width: 10px;
+    height: 32px;
+    background: linear-gradient(to bottom, #a05a1a 60%, #7c3f0e 100%);
+    border-radius: 8px 8px 16px 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    z-index: 2;
+}
+
+.apple:hover {
+    transform: rotate(-3deg) scale(1.05);
+}
+
+/* Apple leaf */
+.leaf {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    /* Align the base of the leaf with the stem */
+    width: 70px;
+    height: 38px;
+    background: linear-gradient(90deg, #4caf50 60%, #388e3c 100%);
+    border-radius: 0 100px 0 100px / 0 60px 40px 100px;
+    transform: rotate(-18deg) skewX(-18deg);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+    z-index: 3;
+}
+
+.leaf::before {
+    display: none;
+}
+
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    max-width: 600px;
+}
+
+.color-option {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.color-option:active {
+    transform: scale(0.95);
+}
+
+.instructions {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2E8B57;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.instructions::after {
+    content: "\00a0";
+}
+
+.fun-message {
+    margin-top: 20px;
+    text-align: center;
+    color: #FF6B6B;
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+.lang-toggle {
+    position: absolute;
+    top: 24px;
+    right: 40px;
+    background: #fff;
+    color: #2E8B57;
+    border: 2px solid #2E8B57;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: background 0.2s, color 0.2s;
+    z-index: 10;
+}
+
+.lang-toggle:hover {
+    background: #2E8B57;
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 18px;
+    }
+
+    .apple-container {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .apple {
+        width: 120px;
+        height: 120px;
+        border-radius: 48px 54px 60px 66px / 48px 54px 60px 66px;
+    }
+
+    .apple-dimple {
+        width: 32px;
+        height: 8px;
+        top: 4px;
+    }
+
+    .apple-highlight {
+        width: 10px;
+        height: 10px;
+        top: 20px;
+        left: 20px;
+    }
+
+    .apple::after {
+        width: 6px;
+        height: 18px;
+        top: -12px;
+        border-radius: 4px 4px 8px 8px;
+    }
+
+    .leaf {
+        width: 38px;
+        height: 20px;
+        top: -16px;
+        left: 50%;
+        border-radius: 0 60px 0 60px / 0 30px 20px 60px;
+    }
+
+    .color-palette {
+        gap: 8px;
+        max-width: 320px;
+    }
+
+    .color-option {
+        width: 40px;
+        height: 40px;
+        border-width: 2px;
+    }
+
+    .instructions {
+        font-size: 1em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .fun-message {
+        font-size: 0.95em;
+        margin-top: 10px;
+    }
+
+    .lang-toggle {
+        top: 12px;
+        right: 12px;
+        padding: 5px 10px;
+        font-size: 0.9em;
+    }
+}
